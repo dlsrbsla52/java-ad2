@@ -15,7 +15,7 @@ public class ClientV5 {
     public static void main(String[] args) throws IOException {
         log("클라이언트 시작");
 
-        try(
+        try (
             Socket socket = new Socket("localhost", PORT);
             DataInputStream input = new DataInputStream(socket.getInputStream());
             DataOutputStream output = new DataOutputStream(socket.getOutputStream())

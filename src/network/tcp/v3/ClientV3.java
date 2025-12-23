@@ -20,7 +20,7 @@ public class ClientV3 {
         log("소캣 연결 : " + socket);
 
         Scanner scanner = new Scanner(System.in);
-        while(true) {
+        while (true) {
             System.out.println("전송 문자 : ");
             String toSend = scanner.nextLine();
             
@@ -28,12 +28,12 @@ public class ClientV3 {
             output.writeUTF(toSend);
             log("client -> server: " + toSend);
             
-            if(toSend.equals("exit")) {
+            if (toSend.equals("exit")) {
                 break;
             }
             // 서버로부터 문자 받기
             String received = input.readUTF();
-            log("client <- server : "+ received);
+            log("client <- server : " + received);
         }
         input.close();
         output.close();

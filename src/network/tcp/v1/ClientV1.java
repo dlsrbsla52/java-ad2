@@ -25,7 +25,7 @@ public class ClientV1 {
         
         // 서버로부터 문자 받기
         String received = input.readUTF();
-        log("client <- server : "+ received);
+        log("client <- server : " + received);
         input.close();
         output.close();
         socket.close();
