@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 public class CommandManagerV2 implements CommandManager {
-    
+
     public static final String DELIMITER = "\\|";
     private final SessionManager sessionManager;
 
@@ -14,14 +14,14 @@ public class CommandManagerV2 implements CommandManager {
 
     @Override
     public void execute(String totalMessage, Session session) throws IOException {
-        
+
         // /join|han
         if (totalMessage.startsWith("/join")) {
             String[] split = totalMessage.split(DELIMITER);
             String username = split[1];
             session.setUsername(username);
             sessionManager.sendAll(username + "님이 입장했습니다.");
-            
+
         } else if (totalMessage.startsWith("/message")) {
             // 클라이언트 전체에게 문자 보내기
             String[] split = totalMessage.split(DELIMITER);
